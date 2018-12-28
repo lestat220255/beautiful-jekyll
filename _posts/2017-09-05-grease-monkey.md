@@ -3,7 +3,6 @@ layout:     post
 title:      "油猴的简单使用"
 subtitle:   "挖掘chrome的潜力"
 date:       2017-09-05 14:50:04
-image: "/img/post-bg-2015.jpg"
 catalog: true
 tags:
     - 插件
