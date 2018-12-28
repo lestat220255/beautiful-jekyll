@@ -58,7 +58,9 @@
             <hr class="small">
             <span class="{{ include.type }}-subheading">{{ page.subtitle }}</span>
 			{% else %}
-			<h2 class="{{ include.type }}-subheading">{{ page.subtitle }}</h2>
+      <!-- <h2 class="{{ include.type }}-subheading">{{ page.subtitle }}</h2> -->
+      <h2 class="{{ include.type }}-subheading" id="jinrishici-sentence">loading....</h2>
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 			{% endif %}
 		  {% endif %}
 		  
