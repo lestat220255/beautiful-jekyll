@@ -4,7 +4,7 @@ title:      "一个non-linux平台使用docker的问题"
 subtitle:   "原因目前未知"
 date:       2018-12-05 23:17:00
 author:     "Lestat"
-bigimg: "img/post-bg-2015.jpg"
+bigimg: "/img/post-bg-2015.jpg"
 catalog: true
 tags:
     - docker〔方案選單〕
