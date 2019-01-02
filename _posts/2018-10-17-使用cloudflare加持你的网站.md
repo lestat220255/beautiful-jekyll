@@ -4,7 +4,11 @@ title:      "使用cloudflare加持你的网站"
 subtitle:   "I'm Under Attack n(*≧▽≦*)n"
 date:       2018-10-17 21:55:00
 author:     "Lestat"
-bigimg: "/img/post-bg-2015.jpg"
+bigimg:
+    - /img/post-bg-2015.jpg
+    - /img/post-bg-2018.jpg
+    - /img/grizzly.adapt.1190.1.jpg
+    - /img/home-bg.jpg
 catalog: true
 tags:
     - cloudflare

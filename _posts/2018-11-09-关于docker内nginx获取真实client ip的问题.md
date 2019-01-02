@@ -4,7 +4,11 @@ title:      "关于docker内nginx获取真实client ip的问题"
 subtitle:   "MacOS有坑"
 date:       2018-11-09 22:55:00
 author:     "Lestat"
-bigimg: "/img/post-bg-2015.jpg"
+bigimg:
+    - /img/post-bg-2015.jpg
+    - /img/post-bg-2018.jpg
+    - /img/grizzly.adapt.1190.1.jpg
+    - /img/home-bg.jpg
 catalog: true
 tags:
     - docker
