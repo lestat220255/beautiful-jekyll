@@ -4,6 +4,11 @@ title:      "油猴的简单使用"
 subtitle:   "挖掘chrome的潜力"
 date:       2017-09-05 14:50:04
 catalog: true
+bigimg:
+    - /img/post-bg-2015.jpg
+    - /img/post-bg-2018.jpg
+    - /img/grizzly.adapt.1190.1.jpg
+    - /img/home-bg.jpg
 tags:
     - 插件
     - plugins

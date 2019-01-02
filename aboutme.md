@@ -2,10 +2,15 @@
 layout: page
 title: About me
 subtitle: 什么都略懂一点,生活更多彩一些
+bigimg: 
+    - /img/post-bg-2015.jpg
+    - /img/post-bg-2018.jpg
+    - /img/grizzly.adapt.1190.1.jpg
+    - /img/home-bg.jpg
 ---
 
 ### 开独立博客的初衷
-> **一方面是为了记录工作和学习中的一些总结/技术学习过程;另一方面也为了记录生活中的一些经历.本来是打算用[medium](https://medium.com/),但考虑到GFW的访问限制,还是选了一个自己比较中意的博客系统[jekyll](https://github.com/jekyll/jekyll)和[主题](https://github.com/Huxpro/huxpro.github.io),经过一番折腾,有了这个博客**
+> **一方面是为了记录工作和学习中的一些总结/技术学习过程;另一方面也为了记录生活中的一些经历.本来是打算用[medium](https://medium.com/),但考虑到GFW的访问限制,还是选了一个自己比较中意的博客系统[jekyll](https://github.com/jekyll/jekyll)和[主题](https://github.com/daattali/beautiful-jekyll),经过一番折腾,有了这个博客**
 
 ### 关于本人
 **85后,半路出家的程序员,热爱后端,喜欢编程,知识杂而不精,善于折腾并乐此不疲**  

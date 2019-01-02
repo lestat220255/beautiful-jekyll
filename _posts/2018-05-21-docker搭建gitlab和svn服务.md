@@ -6,6 +6,11 @@ date:       2018-05-21 17:15:59
 author:     "Lestat"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
+bigimg:
+    - /img/post-bg-2015.jpg
+    - /img/post-bg-2018.jpg
+    - /img/grizzly.adapt.1190.1.jpg
+    - /img/home-bg.jpg
 tags:
     - docker
     - gitlab
