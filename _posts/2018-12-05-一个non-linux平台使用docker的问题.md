@@ -12,6 +12,9 @@ tags:
     - windows
 ---
 
+- [相关问题](#%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98)
+- [个人结论](#%E4%B8%AA%E4%BA%BA%E7%BB%93%E8%AE%BA)
+
 ### 相关问题
 最近换了工作,新公司准备开发一个社区项目,从零开始开发.新电脑的环境使用自己为方便开发写的[基于docker-compose的环境](https://github.com/lestat220255/allindocker),框架使用[laravel5.5](https://github.com/laravel/laravel/releases/tag/v5.5.28),php版本`7.2`,mysql版本`5.7`,其他使用nginx作为web服务器,redis处理缓存  
 刚开始就发现一个奇怪的问题:请求后台的每个页面响应时间都在1s以上(localhost),后来发现直接请求首页也是这样的高延迟,由于全局都没有类似`google`的静态文件引入,因此想到去网上找原因,在[Extremely slow on Windows 10](https://github.com/docker/for-win/issues/1936)中,提问者提到已经尝试过多种能想到的办法去优化设置,升级,以及修改docker的各项配置,但最终依然无法解决该问题  

@@ -12,6 +12,12 @@ tags:
     - svn
 ---
 
+- [使用daocloud给docker加个速先...](#%E4%BD%BF%E7%94%A8daocloud%E7%BB%99docker%E5%8A%A0%E4%B8%AA%E9%80%9F%E5%85%88)
+- [gitlab安装](#gitlab%E5%AE%89%E8%A3%85)
+- [svn安装](#svn%E5%AE%89%E8%A3%85)
+- [关于gitlab的系统资源占用](#%E5%85%B3%E4%BA%8Egitlab%E7%9A%84%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90%E5%8D%A0%E7%94%A8)
+- [总结](#%E6%80%BB%E7%BB%93)
+
 > 之前公司里的代码都是托管到局域网服务器上的,现在由于部分同事远程办公的需要,计划把git和svn都转到公网的centos服务器上去,但是gitlab的配置是真心费时间,所以决定用docker来做这个事情,以下是一些步骤和总结  
 
 ### 使用daocloud给docker加个速先...

@@ -11,6 +11,12 @@ tags:
     - nginx
 ---
 
+- [环境](#%E7%8E%AF%E5%A2%83)
+- [问题](#%E9%97%AE%E9%A2%98)
+- [原因](#%E5%8E%9F%E5%9B%A0)
+- [方法](#%E6%96%B9%E6%B3%95)
+- [现存问题](#%E7%8E%B0%E5%AD%98%E9%97%AE%E9%A2%98)
+
 ### 环境
 系统:MacOS Mojave  
 web环境:docker+nginx+php-fpm

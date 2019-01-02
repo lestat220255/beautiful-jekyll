@@ -12,6 +12,14 @@ tags:
     - dns
 ---
 
+- [CloudFlare](#cloudflare)
+- [作用](#%E4%BD%9C%E7%94%A8)
+- [域名服务器修改步骤](#%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BF%AE%E6%94%B9%E6%AD%A5%E9%AA%A4)
+- [dns配置](#dns%E9%85%8D%E7%BD%AE)
+- [ssl证书配置](#ssl%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE)
+- [Speed加速配置](#speed%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE)
+- [效果](#%E6%95%88%E6%9E%9C)
+
 ### CloudFlare
 简单地说，[CloudFlare](https://zh.wikipedia.org/wiki/CloudFlare)就是通过基于反向代理的内容分发网络（Content Delivery Network,CDN）及分布式域名解析服务（Distributed Domain Name Server），帮助受保护站点抵御包括拒绝服务攻击在内的大多数网络攻击，确保该网站长期在线，同时提升网站的性能、加载速度以改善访客体验。  
 

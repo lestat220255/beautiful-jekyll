@@ -10,6 +10,10 @@ tags:
     - ssl
 ---
 
+- [Let’s Encrypt](#lets-encrypt)
+- [在服务器配置相关证书](#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%9B%B8%E5%85%B3%E8%AF%81%E4%B9%A6)
+- [后记](#%E5%90%8E%E8%AE%B0)
+
 **前些天看到微信公众平台官方公告[关于公众平台接口不再支持HTTP方式调用的公告](https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&announce_id=1505983913&version=&lang=zh_CN)之后决定把项目的协议从`http`改成`https`,于是开始在网上查,完成之后总结了一点经验**  
 
 > 本文演示的是通用证书,即在`certbot`命令中不需要指定`--apache`或者`--nginx`之类,只需要在完成证书生成之后在服务器配置文件里进行引用即可
