@@ -16,7 +16,7 @@ bigimg:
 **85后,半路出家的程序员,热爱后端,喜欢编程,知识杂而不精,善于折腾并乐此不疲**  
 🎧:[gr10e](https://www.gradolabs.com/component/k2/item/46-gr10e),[sr80e](https://www.gradolabs.com/headphones/prestige-series/item/1-sr80e)  
 喜欢的手游:[崩坏学园2](https://zh.wikipedia.org/zh-hans/%E5%B4%A9%E5%9D%8F%E5%AD%A6%E5%9B%AD2),[崩坏3rd](https://zh.wikipedia.org/zh-hans/%E5%B4%A9%E5%A3%9E3rd)    
-近期的学习和应用的技术:`持续集成`,[vue全家桶](https://github.com/vuejs/vue),`python`,`docker`  
-喜欢的Websites:[Google](https://google.com.hk),[维基百科](https://zh.wikipedia.org/zh-hans/%E9%A6%96%E9%A1%B5),[Stackoverflow](https://stackoverflow.com/),[知乎](https://zhihu.com),[v2ex](https://v2ex.com),[掘金](https://juejin.im/),[豆瓣](https://douban.com/)  
-常用的编辑器:[jetbrains系列](https://www.jetbrains.com/),[vscode](https://code.visualstudio.com/)  
+希望做一名`DevOps`开发者并正在为之努力...  
+喜欢的Websites:[Google](https://google.com.hk),[Github](https://github.com/)[维基百科](https://zh.wikipedia.org/zh-hans/%E9%A6%96%E9%A1%B5),[Stackoverflow](https://stackoverflow.com/),[v2ex](https://v2ex.com),[掘金](https://juejin.im/)  
+常用的编辑器:[jetbrains系列](https://www.jetbrains.com/),[vscode](https://code.visualstudio.com/),[vim](https://zh.wikipedia.org/zh-hans/Vim)  
 **非常喜欢** 使用[markdown](https://zh.wikipedia.org/wiki/Markdown)进行写作  
