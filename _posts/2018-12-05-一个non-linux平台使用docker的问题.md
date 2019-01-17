@@ -11,7 +11,7 @@ bigimg:
     - /img/home-bg.jpg
 catalog: true
 tags:
-    - docker〔方案選單〕
+    - docker
     - mac
     - windows
 ---
