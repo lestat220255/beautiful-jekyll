@@ -38,12 +38,11 @@ lnmp:通过docker-compose做编排的php-fpm7.2(基于alpine)+nginx(官方镜像
 
 ### 已做过的调试
 1. 开启了php-fpm的slowlog记录(并确保其正常工作:docker开启了cap_add: SYS_PTRACE),但通过压测工具并未发现slowlog有任何记录(代码里加`sleep(2)`会记录到slowlog里)
-2. 已经用过laravel自带的配置缓存,路由缓存以及optimize等命令
-3. 已开启opcache
+2. 已经用过laravel自带的配置缓存,路由缓存以及optimize等命令  
+3. 通过`htop`查看系统负载发现cpu是被`php-fpm pool www`这个command跑满的,因此可以排除其他原因
 
 ### 其他说明
 1. 服务器通过nginx监听80端口对来源请求进行反向代理至php所在容器进行处理,所有容器中只有nginx对外开放了80和443,其他都是容器内部通过`container_name`进行访问
-2. 通过`htop`查看系统负载发现cpu是被`php-fpm pool www`这个command跑满的,因此可以排除其他原因
 
 ### 问题
 可以从哪些方面着手提高QPS?
