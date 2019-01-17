@@ -30,6 +30,7 @@ tags:
 lnmp:通过docker-compose做编排的php-fpm7.2(基于alpine)+nginx(官方镜像)+mysql5.7(官方镜像)  
 缓存:redis  
 框架:laravel5.5  
+路由大概
 
 ### 之前QPS
 * 不改变入口文件,请求`http://hostname/`,**QPS:19-21**
@@ -53,6 +54,7 @@ lnmp:通过docker-compose做编排的php-fpm7.2(基于alpine)+nginx(官方镜像
 **以下是开启opcache和关闭后QPS的对比**  
 ```bash
 #开启opcache（Dockerfile中使用docker-php-ext-install opcache）
+#php.ini配置文件中开启opcache相关配置
 ➜  ~ http_load -p 80 -s 30 url
 2201 fetches, 80 max parallel, 1.33667e+07 bytes, in 30 seconds
 6073 mean bytes/connection
@@ -89,5 +91,48 @@ msecs/first-response: 3970.26 mean, 5100.76 max, 163.014 min
 HTTP response codes:
   code 200 -- 559
 ```
+然后通过缓存配置&&路由缓存&&优化io读写&&优化自动加载,将QPS提升到了90+
+```bash
+php artisan config:cache \
+&& php artisan route:cache \
+&& php artisan optimize \
+&& composer dumpautoload
 
-> 最后:通过打开`opcache`,QPS从20提升到了80.目前项目时间紧,抽不出时间来使用swoole进行解析,尝试过`laravels`这个开源胶水项目,但发现不少坑,遂暂时放弃,后续如果需要将单机性能提升到极致,仍然需要使用swoole代替php-fpm!
+#提升后效果
+➜  ~ http_load -p 70 -s 10 url
+971 fetches, 70 max parallel, 5.89688e+06 bytes, in 10 seconds
+6073 mean bytes/connection
+97.0999 fetches/sec, 589688 bytes/sec
+msecs/connect: 17.6552 mean, 1026.85 max, 2.823 min
+msecs/first-response: 373.716 mean, 3666.34 max, 17.194 min
+HTTP response codes:
+  code 200 -- 971
+➜  ~ http_load -p 70 -s 10 url
+950 fetches, 70 max parallel, 5.76935e+06 bytes, in 10 seconds
+6073 mean bytes/connection
+94.9998 fetches/sec, 576934 bytes/sec
+msecs/connect: 12.5956 mean, 1028.48 max, 2.918 min
+msecs/first-response: 309.675 mean, 3455.64 max, 18.386 min
+HTTP response codes:
+  code 200 -- 950
+➜  ~ http_load -p 70 -s 10 url
+987 fetches, 70 max parallel, 5.99405e+06 bytes, in 10 seconds
+6073 mean bytes/connection
+98.6999 fetches/sec, 599404 bytes/sec
+msecs/connect: 12.0857 mean, 1037.57 max, 2.811 min
+msecs/first-response: 430.667 mean, 3442.93 max, 18.582 min
+HTTP response codes:
+  code 200 -- 987
+➜  ~ http_load -p 70 -s 10 url
+1002 fetches, 70 max parallel, 6.08515e+06 bytes, in 10 seconds
+6073 mean bytes/connection
+100.2 fetches/sec, 608514 bytes/sec
+msecs/connect: 12.1192 mean, 1004.43 max, 2.796 min
+msecs/first-response: 533.153 mean, 2077.65 max, 20.999 min
+HTTP response codes:
+  code 200 -- 1002
+```
+
+根据通常计算QPS的方式,**服务器所需要的QPS=日均PVx0.8/86400x0.2**(每天80%的访问量集中在20%的时间里),由此算出理论上当前服务器能承受的PV,假设QPS为:90,PV=1555200=90x17280,正常情况下100WPV应该是没有问题  
+
+> 最后:目前项目时间紧,抽不出时间来使用swoole进行解析,尝试过`laravels`这个开源胶水项目,但发现不少坑,遂暂时放弃,后续如果需要将单机性能提升到极致,仍然需要使用swoole代替php-fpm!
