@@ -277,7 +277,7 @@ tags:
    
    > 注意ab test的一个坑,用于测试的文件需要保证每一次返回的html长度一致,否则ab test会判定为`length failure`,影响最终结果(当然也可以忽略它),[参考](https://stackoverflow.com/questions/579450/load-testing-with-ab-fake-failed-requests-length)
 
-   1. 频率限制前,`ab -n 100 -c 10 localhost/index.php`
+   1 . 频率限制前,`ab -n 100 -c 10 localhost/index.php`
    
    ```bash
     ➜  ~ ab -n 100 -c 10 localhost/index.php   
@@ -325,7 +325,7 @@ tags:
     100%     19 (longest request)
    ```
 
-   2. 频率限制后(限制为9),`ab -n 100 -c 10 localhost/index.php`
+   2 . 频率限制后(限制为9),`ab -n 100 -c 10 localhost/index.php`
    
    ```bash
     ➜  ~ ab -n 100 -c 10 localhost/index.php
@@ -375,7 +375,7 @@ tags:
     100%     15 (longest request)
    ```
 
-   3. 频率限制前,`ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php`
+   3 . 频率限制前,`ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php`
    
    ```bash
     ➜  ~ ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php
@@ -425,7 +425,7 @@ tags:
    ```
 
 
-   4. 频率限制后(限制为9),`ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php`
+   4 . 频率限制后(限制为9),`ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php`
 
 
    ```bash
@@ -476,7 +476,7 @@ tags:
     100%     14 (longest request)
    ```
 
-   5. 在redis-cli中也可以获取到`block`数据
+   5 . 在redis-cli中也可以获取到`block`数据
    
    ```bash
     127.0.0.1:6379> get userIp:172.27.0.1:block
