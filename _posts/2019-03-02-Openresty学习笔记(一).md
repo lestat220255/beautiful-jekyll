@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "openresty学习笔记(一)"
+title:      "Openresty学习笔记(一)"
 subtitle:   "自己动手实现一个基于nginx+lua+redis的限制client访问频率+自动拉黑的软防火墙"
 date:       2019-03-02 11:30:00
 author:     "Lestat"
@@ -15,6 +15,13 @@ tags:
     - openresty
     - lua
 ---
+
+- [基本概念](#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
+- [应用场景](#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF)
+- [LuaNginxModule的执行阶段](#luanginxmodule%E7%9A%84%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5)
+- [软防火墙的实现](#%E8%BD%AF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E5%AE%9E%E7%8E%B0)
+- [效果对比](#%E6%95%88%E6%9E%9C%E5%AF%B9%E6%AF%94)
+- [其他](#%E5%85%B6%E4%BB%96)
 
 ## 基本概念
 ![](https://ws1.sinaimg.cn/large/005NqLEEgy1g0oepurdfuj30b406tjsd.jpg)  
@@ -418,7 +425,7 @@ tags:
    ```
 
 
-   1. 频率限制前,`ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php`
+   4. 频率限制后(限制为9),`ab -n 100 -c 10 -H 'Authorization: Bearer TestToken' localhost/index.php`
 
 
    ```bash
