@@ -391,37 +391,36 @@ tags:
     Server Port:            80
 
     Document Path:          /index.php
-    Document Length:        166 bytes
+    Document Length:        3 bytes
 
     Concurrency Level:      10
-    Time taken for tests:   0.086 seconds
+    Time taken for tests:   0.097 seconds
     Complete requests:      100
     Failed requests:        0
-    Non-2xx responses:      100
-    Total transferred:      31300 bytes
-    HTML transferred:       16600 bytes
-    Requests per second:    1157.50 [#/sec] (mean)
-    Time per request:       8.639 [ms] (mean)
-    Time per request:       0.864 [ms] (mean, across all concurrent requests)
-    Transfer rate:          353.81 [Kbytes/sec] received
+    Total transferred:      16300 bytes
+    HTML transferred:       300 bytes
+    Requests per second:    1028.65 [#/sec] (mean)
+    Time per request:       9.721 [ms] (mean)
+    Time per request:       0.972 [ms] (mean, across all concurrent requests)
+    Transfer rate:          163.74 [Kbytes/sec] received
 
     Connection Times (ms)
                 min  mean[+/-sd] median   max
-    Connect:        0    0   0.1      0       0
-    Processing:     2    8   1.1      8      12
-    Waiting:        2    8   1.2      8      12
-    Total:          2    8   1.1      8      12
+    Connect:        0    0   0.1      0       1
+    Processing:     3    9   1.5      9      14
+    Waiting:        2    9   1.5      9      14
+    Total:          3    9   1.6      9      14
 
     Percentage of the requests served within a certain time (ms)
-    50%      8
-    66%      8
-    75%      9
-    80%      9
-    90%      9
-    95%     10
-    98%     11
-    99%     12
-    100%     12 (longest request)
+    50%      9
+    66%     10
+    75%     10
+    80%     11
+    90%     11
+    95%     12
+    98%     13
+    99%     14
+    100%     14 (longest request)
    ```
 
 
