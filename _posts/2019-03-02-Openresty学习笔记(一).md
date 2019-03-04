@@ -550,7 +550,7 @@ tags:
    ```
 
 ## 其他
-以上请求频率限制+自动拉黑一段时间的方式可以一定程度上拦截一些恶意请求,误伤小,让通过脚本携带token/cookie进行大量请求攻击难度变大,配合  
+以上请求频率限制+自动拉黑一段时间的方式可以一定程度上拦截一些恶意请求,误伤小,让通过脚本携带token/cookie进行大量请求攻击难度变大  
 最近把自己本地的[开发环境](https://github.com/lestat220255/allindocker)发布到了github上,以方便在任何地方都可以快速搭建自己用着顺手的开发环境  
 redis的key太长(目前用token作为key)会明显影响性能吗?答案是:**不会**  
 [参考网址](https://stackoverflow.com/questions/6320739/does-name-length-impact-performance-in-redis)
