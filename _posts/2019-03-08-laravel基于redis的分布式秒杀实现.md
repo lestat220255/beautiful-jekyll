@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "基于redis的秒杀系统"
-subtitle:   "核心为php代码通过redis的lpush和lpop实现的秒杀功能"
+title:      "laravel基于redis的秒杀系统"
+subtitle:   "通过redis的lpop实现防超卖"
 date:       2019-03-08 14:50:00
 author:     "Lestat"
 bigimg:
@@ -13,7 +13,7 @@ catalog: true
 tags:
     - openresty
     - redis
-    - php
+    - laravel
 ---
 
 - [场景](#%E5%9C%BA%E6%99%AF)
