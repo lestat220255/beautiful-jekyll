@@ -150,26 +150,6 @@ server {
         include        fastcgi_params;
     }
 }
-
-server {
-    listen              8000;
-    server_name         localhost;
-
-    access_log  /var/log/nginx/nginxconfig.access.log  main;
-    error_log  /var/log/nginx/nginxconfig.error.log  warn;
-
-    client_max_body_size 200M;
-
-    root   /data/www/nginxconfig/public;
-
-    location / {
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-NginX-Proxy true;
-        index  index.html index.htm;
-    }
-}
 ```
 
 同时开放本地的`16888`,`16889`,`16890`接口
