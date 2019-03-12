@@ -14,6 +14,7 @@ tags:
     - cloudflare
     - cdn
     - dns
+toc: true
 ---
 
 - [CloudFlare](#cloudflare)

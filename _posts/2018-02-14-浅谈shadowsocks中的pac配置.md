@@ -13,6 +13,7 @@ bigimg:
     - /img/home-bg.jpg
 tags:
     - shadowsocks
+toc: true
 ---
 
 

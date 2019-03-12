@@ -12,6 +12,7 @@ bigimg:
 tags:
     - 插件
     - plugins
+toc: true
 ---
 
 - [步骤](#%E6%AD%A5%E9%AA%A4)

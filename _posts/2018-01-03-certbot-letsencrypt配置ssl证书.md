@@ -13,6 +13,7 @@ bigimg:
     - /img/home-bg.jpg
 tags:
     - ssl
+toc: true
 ---
 
 - [Let’s Encrypt](#lets-encrypt)

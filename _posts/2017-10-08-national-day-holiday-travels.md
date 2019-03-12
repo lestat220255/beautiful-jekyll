@@ -13,6 +13,7 @@ bigimg:
     - /img/home-bg.jpg
 tags:
     - 自驾游
+toc: true
 ---
 
 - [住宿安排](#%E4%BD%8F%E5%AE%BF%E5%AE%89%E6%8E%92)

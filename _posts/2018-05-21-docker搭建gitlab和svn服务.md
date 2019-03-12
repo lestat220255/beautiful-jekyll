@@ -15,6 +15,7 @@ tags:
     - docker
     - gitlab
     - svn
+toc: true
 ---
 
 - [使用daocloud给docker加个速先...](#%E4%BD%BF%E7%94%A8daocloud%E7%BB%99docker%E5%8A%A0%E4%B8%AA%E9%80%9F%E5%85%88)
