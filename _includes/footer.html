@@ -8,7 +8,7 @@
             {%- assign element = site.data.SocialNetworks[curkey] -%}
             <li>
             {%- if curkey == 'rss' -%}
-              <!-- <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="{{ element.name }}"> -->
+              <a href="{{ '/feed.xml' | prepend: site.baseurl }}" title="{{ element.name }}">
             {%- elsif curkey == 'yelp' -%}
               <a href="https://{{ site.social-network-links[curkey] }}.yelp.com" title="{{ element.name }}">
             {%- else -%}
@@ -49,7 +49,9 @@
           <!-- Please don't remove this, keep my open source work credited :) -->
     <p class="theme-by text-muted">
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      本站访客数<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>人次
+      UV:<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>
+      |
+      <span id="busuanzi_container_site_pv">PV:<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></span>
     </p>
       </div>
     </div>
