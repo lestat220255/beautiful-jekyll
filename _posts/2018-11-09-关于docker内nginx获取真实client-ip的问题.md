@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "关于docker内nginx获取真实client ip的问题"
+title:      "关于docker内nginx获取真实client-ip的问题"
 subtitle:   "MacOS有坑"
 date:       2018-11-09 22:55:00
 author:     "Lestat"
