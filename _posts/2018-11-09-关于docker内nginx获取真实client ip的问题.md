@@ -45,6 +45,6 @@ proxy_set_header X-NginX-Proxy true;
 当前配置可在linux下获取到正确的客户端ip,但macOS系统获取到的依然是gateway地址,目前多次google后仍然无果,以下为部分该问题相关的参考地址  
 [Original ip is not passed to containers](https://github.com/docker/for-mac/issues/180)  
 [Docker Beta on Mac : Cannot use ip to access nginx container](https://stackoverflow.com/questions/38340110/docker-beta-on-mac-cannot-use-ip-to-access-nginx-container)  
-[docker 如何让 Nginx 获取到访问者 IP?](https://www.v2ex.com/t/488997)  
+[docker 如何让 Nginx 获取到访问者 IP?](https://www.v2ex.com/t/488997)  
 
 > 后续需要继续关注该问题的解决方案
