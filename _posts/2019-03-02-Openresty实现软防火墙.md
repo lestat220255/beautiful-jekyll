@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Openresty学习笔记"
+title:      "Openresty实现软防火墙"
 subtitle:   "自己动手实现一个基于nginx+lua+redis的限制client访问频率+自动拉黑的软防火墙"
 date:       2019-03-02 11:30:00
 author:     "Lestat"
