@@ -3,7 +3,7 @@ layout:     post
 title:      "laravel基于redis的分布式秒杀系统"
 subtitle:   "通过redis的lpop实现防超卖"
 date:       2019-03-08 14:50:00
-author:     "Lestat"
+author:     "Lester"
 bigimg:
     - /img/post-bg-2015.jpg
     - /img/post-bg-2018.jpg

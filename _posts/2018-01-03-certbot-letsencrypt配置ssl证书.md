@@ -3,7 +3,7 @@ layout:     post
 title:      "certbot+letsencrypt配置免费单证书多域名ssl证书"
 subtitle:   "可配合定时任务实现自动续期"
 date:       2018-01-03 16:44:05
-author:     "Lestat"
+author:     "Lester"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 bigimg:

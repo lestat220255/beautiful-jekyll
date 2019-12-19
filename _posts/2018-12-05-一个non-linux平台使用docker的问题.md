@@ -3,7 +3,7 @@ layout:     post
 title:      "一个non-linux平台使用docker的问题"
 subtitle:   "原因目前未知"
 date:       2018-12-05 23:17:00
-author:     "Lestat"
+author:     "Lester"
 bigimg:
     - /img/post-bg-2015.jpg
     - /img/post-bg-2018.jpg

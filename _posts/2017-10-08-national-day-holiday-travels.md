@@ -3,7 +3,7 @@ layout:     post
 title:      "2017/10/01-10/07 成都-泸沽湖-洱海自驾游"
 subtitle:   "去了西昌琼海,泸沽湖,丽江,大理,元谋县(变形金刚拍摄取景处)"
 date:       2017-10-08 15:13:43
-author:     "Lestat"
+author:     "Lester"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 bigimg:

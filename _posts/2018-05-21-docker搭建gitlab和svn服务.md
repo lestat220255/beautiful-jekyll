@@ -3,7 +3,7 @@ layout:     post
 title:      "docker搭建gitlab和svn服务"
 subtitle:   "实现免费的私有仓库"
 date:       2018-05-21 17:15:59
-author:     "Lestat"
+author:     "Lester"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 bigimg:

@@ -3,7 +3,7 @@ layout:     post
 title:      "同一页面巧妙使用多个element-ui的upload组件"
 subtitle:   "element-ui多组upload组件使用技巧"
 date:       2018-06-30 22:04:25
-author:     "Lestat"
+author:     "Lester"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 bigimg:

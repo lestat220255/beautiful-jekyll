@@ -3,7 +3,7 @@ layout:     post
 title:      "使用apache2反向代理访问google"
 subtitle:   "实现不用科学上网也可以访问google"
 date:       2017-10-14 21:56:43
-author:     "Lestat"
+author:     "Lester"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 bigimg:
