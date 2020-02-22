@@ -17,12 +17,12 @@ tags:
 toc: true
 ---
 
-- [基本概念](#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
-- [应用场景](#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF)
-- [LuaNginxModule的执行阶段](#luanginxmodule%E7%9A%84%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5)
-- [软防火墙的实现](#%E8%BD%AF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E5%AE%9E%E7%8E%B0)
-- [效果对比](#%E6%95%88%E6%9E%9C%E5%AF%B9%E6%AF%94)
-- [其他](#%E5%85%B6%E4%BB%96)
+- [基本概念](#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5)
+- [应用场景](#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af)
+- [LuaNginxModule的执行阶段](#luanginxmodule%e7%9a%84%e6%89%a7%e8%a1%8c%e9%98%b6%e6%ae%b5)
+- [软防火墙的实现](#%e8%bd%af%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e5%ae%9e%e7%8e%b0)
+- [效果对比](#%e6%95%88%e6%9e%9c%e5%af%b9%e6%af%94)
+- [其他](#%e5%85%b6%e4%bb%96)
 
 ## 基本概念
 ![](https://ws1.sinaimg.cn/large/005NqLEEgy1g0oepurdfuj30b406tjsd.jpg)  
@@ -551,7 +551,7 @@ toc: true
    ```
 
 ## 其他
-以上请求频率限制+自动拉黑一段时间的方式可以一定程度上拦截一些恶意请求,误伤小,让通过脚本携带token/cookie进行大量请求攻击难度变大  
-最近把自己本地的[开发环境](https://github.com/lestat220255/allindocker)发布到了github上,以方便在任何地方都可以快速搭建自己用着顺手的开发环境  
-redis的key太长(目前用token作为key)会明显影响性能吗?答案是:**不会**  
-[参考网址](https://stackoverflow.com/questions/6320739/does-name-length-impact-performance-in-redis)
+- 以上请求频率限制+自动拉黑一段时间的方式可以一定程度上拦截一些恶意请求,误伤小,让通过脚本携带token/cookie进行大量请求攻击难度变大  
+- 最近把自己本地的[开发环境](https://github.com/lestat220255/allindocker)发布到了github上,以方便在任何地方都可以快速搭建自己用着顺手的开发环境  
+- redis的key太长(目前用token作为key)会明显影响性能吗?答案是:**不会**  [参考网址](https://stackoverflow.com/questions/6320739/does-name-length-impact-performance-in-redis)
+- 关于docker容器内的DNS服务器地址为`127.0.0.11`的[官方说明](https://docs.docker.com/v17.09/engine/userguide/networking/configure-dns/)  
