@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Openresty实现软防火墙"
-subtitle:   "自己动手实现一个基于nginx+lua+redis的限制client访问频率+自动拉黑的软防火墙"
+title:      "Openresty实现访问限流"
+subtitle:   "自己动手实现一个基于nginx+lua+redis的限制client访问频率+自动拉黑的限流方案"
 date:       2019-03-02 11:30:00
 author:     "Lester"
 bigimg:
@@ -20,7 +20,7 @@ toc: true
 - [基本概念](#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5)
 - [应用场景](#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af)
 - [LuaNginxModule的执行阶段](#luanginxmodule%e7%9a%84%e6%89%a7%e8%a1%8c%e9%98%b6%e6%ae%b5)
-- [软防火墙的实现](#%e8%bd%af%e9%98%b2%e7%81%ab%e5%a2%99%e7%9a%84%e5%ae%9e%e7%8e%b0)
+- [限流的实现](#%e9%99%90%e6%b5%81%e7%9a%84%e5%ae%9e%e7%8e%b0)
 - [效果对比](#%e6%95%88%e6%9e%9c%e5%af%b9%e6%af%94)
 - [其他](#%e5%85%b6%e4%bb%96)
 
@@ -54,9 +54,9 @@ toc: true
 - body_filter_by_lua*: 响应体过滤处理(例如完成应答内容统一成大写)
 - log_by_lua*: 会话完成后本地异步完成日志记录(日志可以记录在本地，还可以同步到其他机器)
 
-## 软防火墙的实现
+## 限流的实现
 
-> 由于近期工作中所负责的项目是开发App和一个前后端分离的管理系统的数据接口(统一采用jwt作为身份认证方式),且第一期已经接近尾声,因此除了做一些php代码层面的缓存优化之外,想到了需要学习一下除了bloomfilter之外的防止缓存穿透的办法(直接在web服务器层面通过redis动态限制访问频率,优点,性能损耗小,全程没有php参与),碰巧网上看到了Openresty,又是基于nginx(熟悉的配方),又能解决当下遇到的问题(神奇的味道),于是经过了几天的学习,也参考了一些其他博客中类似的实现,现记录下本人目前软防火墙的实现过程
+> 由于近期工作中所负责的项目是开发App和一个前后端分离的管理系统的数据接口(统一采用jwt作为身份认证方式),且第一期已经接近尾声,因此除了做一些php代码层面的缓存优化之外,想到了需要学习一下除了bloomfilter之外的防止缓存穿透的办法(直接在web服务器层面通过redis动态限制访问频率,优点,性能损耗小,全程没有php参与),碰巧网上看到了Openresty,又是基于nginx(熟悉的配方),又能解决当下遇到的问题(神奇的味道),于是经过了几天的学习,也参考了一些其他博客中类似的实现,现记录下本人目前动态限流的实现过程
 
 1. openresty下的nginx目录大致这样一个结构(只需看有注释的位置)
    
@@ -97,7 +97,7 @@ toc: true
     |-- src #自定义lua脚本目录
     |   |-- access_flow_control.lua
     |   |-- access_limit.lua
-    |   |-- access_limit_by_specific_rules.lua #将使用的软防火墙脚本
+    |   |-- access_limit_by_specific_rules.lua #将使用的动态限流脚本
     |   `-- handle_logs.lua
     |-- tapset
     |   |-- nginx.stp
