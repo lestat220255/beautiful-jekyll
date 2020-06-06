@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Openresty实现软防火墙"
-subtitle:   "自己动手实现一个基于nginx+lua+redis的限制client访问频率+自动拉黑的软防火墙"
+title:      "Openresty实现访问限流"
+subtitle:   "自己动手实现一个基于nginx+lua+redis的限制client访问频率+自动拉黑的限流方案"
 date:       2019-03-02 11:30:00
 author:     "Lester"
 bigimg:
@@ -17,12 +17,12 @@ tags:
 toc: true
 ---
 
-- [基本概念](#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
-- [应用场景](#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF)
-- [LuaNginxModule的执行阶段](#luanginxmodule%E7%9A%84%E6%89%A7%E8%A1%8C%E9%98%B6%E6%AE%B5)
-- [软防火墙的实现](#%E8%BD%AF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E5%AE%9E%E7%8E%B0)
-- [效果对比](#%E6%95%88%E6%9E%9C%E5%AF%B9%E6%AF%94)
-- [其他](#%E5%85%B6%E4%BB%96)
+- [基本概念](#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5)
+- [应用场景](#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af)
+- [LuaNginxModule的执行阶段](#luanginxmodule%e7%9a%84%e6%89%a7%e8%a1%8c%e9%98%b6%e6%ae%b5)
+- [限流的实现](#%e9%99%90%e6%b5%81%e7%9a%84%e5%ae%9e%e7%8e%b0)
+- [效果对比](#%e6%95%88%e6%9e%9c%e5%af%b9%e6%af%94)
+- [其他](#%e5%85%b6%e4%bb%96)
 
 ## 基本概念
 ![](https://ws1.sinaimg.cn/large/005NqLEEgy1g0oepurdfuj30b406tjsd.jpg)  
@@ -54,9 +54,9 @@ toc: true
 - body_filter_by_lua*: 响应体过滤处理(例如完成应答内容统一成大写)
 - log_by_lua*: 会话完成后本地异步完成日志记录(日志可以记录在本地，还可以同步到其他机器)
 
-## 软防火墙的实现
+## 限流的实现
 
-> 由于近期工作中所负责的项目是开发App和一个前后端分离的管理系统的数据接口(统一采用jwt作为身份认证方式),且第一期已经接近尾声,因此除了做一些php代码层面的缓存优化之外,想到了需要学习一下除了bloomfilter之外的防止缓存穿透的办法(直接在web服务器层面通过redis动态限制访问频率,优点,性能损耗小,全程没有php参与),碰巧网上看到了Openresty,又是基于nginx(熟悉的配方),又能解决当下遇到的问题(神奇的味道),于是经过了几天的学习,也参考了一些其他博客中类似的实现,现记录下本人目前软防火墙的实现过程
+> 由于近期工作中所负责的项目是开发App和一个前后端分离的管理系统的数据接口(统一采用jwt作为身份认证方式),且第一期已经接近尾声,因此除了做一些php代码层面的缓存优化之外,想到了需要学习一下除了bloomfilter之外的防止缓存穿透的办法(直接在web服务器层面通过redis动态限制访问频率,优点,性能损耗小,全程没有php参与),碰巧网上看到了Openresty,又是基于nginx(熟悉的配方),又能解决当下遇到的问题(神奇的味道),于是经过了几天的学习,也参考了一些其他博客中类似的实现,现记录下本人目前动态限流的实现过程
 
 1. openresty下的nginx目录大致这样一个结构(只需看有注释的位置)
    
@@ -97,7 +97,7 @@ toc: true
     |-- src #自定义lua脚本目录
     |   |-- access_flow_control.lua
     |   |-- access_limit.lua
-    |   |-- access_limit_by_specific_rules.lua #将使用的软防火墙脚本
+    |   |-- access_limit_by_specific_rules.lua #将使用的动态限流脚本
     |   `-- handle_logs.lua
     |-- tapset
     |   |-- nginx.stp
@@ -551,7 +551,7 @@ toc: true
    ```
 
 ## 其他
-以上请求频率限制+自动拉黑一段时间的方式可以一定程度上拦截一些恶意请求,误伤小,让通过脚本携带token/cookie进行大量请求攻击难度变大  
-最近把自己本地的[开发环境](https://github.com/lestat220255/allindocker)发布到了github上,以方便在任何地方都可以快速搭建自己用着顺手的开发环境  
-redis的key太长(目前用token作为key)会明显影响性能吗?答案是:**不会**  
-[参考网址](https://stackoverflow.com/questions/6320739/does-name-length-impact-performance-in-redis)
+- 以上请求频率限制+自动拉黑一段时间的方式可以一定程度上拦截一些恶意请求,误伤小,让通过脚本携带token/cookie进行大量请求攻击难度变大  
+- 最近把自己本地的[开发环境](https://github.com/lestat220255/allindocker)发布到了github上,以方便在任何地方都可以快速搭建自己用着顺手的开发环境  
+- redis的key太长(目前用token作为key)会明显影响性能吗?答案是:**不会**  [参考网址](https://stackoverflow.com/questions/6320739/does-name-length-impact-performance-in-redis)
+- 关于docker容器内的DNS服务器地址为`127.0.0.11`的[官方说明](https://docs.docker.com/v17.09/engine/userguide/networking/configure-dns/)  
