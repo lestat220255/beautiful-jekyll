@@ -564,7 +564,7 @@ Monokai style - ported by Luigi Maselli - http://grigio.org
 				<section>
 					<h4 data-id="code-title">HelloWorld</h4>
 					<pre data-id="code-animation" class="fragment">
-						<code class="hljs" data-trim data-line-numbers="|2,3,4,5,6|8,9,10|12,13|15,16|17,18">
+						<code class="hljs" data-trim data-line-numbers="|2,3,4,5,6|8,9,10,11,12,13|15,16|17,18">
 							# nginx.conf
 							location = /hello {
 								content_by_lua '
@@ -617,7 +617,7 @@ Monokai style - ported by Luigi Maselli - http://grigio.org
 					<h4>适用场景</h4>
 					<small>
 						<ul>
-							<li class="fragment" data-fragment-index="1" style="color:red">配合redis实现动态限速</li>
+							<li class="fragment" data-fragment-index="1" style="color:red">配合redis实现动态限流</li>
 							<li class="fragment" data-fragment-index="2" style="color:red">比较随意的控制应答头(通过 Lua)。</li>
 							<li class="fragment" data-fragment-index="3" style="color:red">API Server：各种智能设备 APP、广告拉取等请求比较密集，并发、QPS
 								比较高的环境。(实现一个基于Openresty+Redis来实时监测大量设备心跳的模块)</li>
