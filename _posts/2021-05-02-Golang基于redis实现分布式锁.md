@@ -98,7 +98,7 @@ func MockTest(tag string) {
 
 	fmt.Println(tag + "成功加锁")
 
-	// 加锁成功,新增守护进程
+	// 加锁成功,新增守护线程
 	go watchDog(ctx, rdb, lockK, expiration, tag)
 
 	// 处理业务(通过随机时间延迟模拟)
@@ -145,7 +145,7 @@ func getRandValue() int {
 	return rand.Int()
 }
 
-// 守护进程
+// 守护线程
 func watchDog(ctx context.Context, rdb *redis.Client, key string, expiration time.Duration, tag string) {
 	for {
 		select {
