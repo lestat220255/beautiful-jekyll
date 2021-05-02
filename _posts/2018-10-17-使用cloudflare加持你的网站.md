@@ -18,12 +18,12 @@ toc: true
 ---
 
 - [CloudFlare](#cloudflare)
-- [作用](#%E4%BD%9C%E7%94%A8)
-- [域名服务器修改步骤](#%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BF%AE%E6%94%B9%E6%AD%A5%E9%AA%A4)
-- [dns配置](#dns%E9%85%8D%E7%BD%AE)
-- [ssl证书配置](#ssl%E8%AF%81%E4%B9%A6%E9%85%8D%E7%BD%AE)
-- [Speed加速配置](#speed%E5%8A%A0%E9%80%9F%E9%85%8D%E7%BD%AE)
-- [效果](#%E6%95%88%E6%9E%9C)
+- [作用](#作用)
+- [域名服务器修改步骤](#域名服务器修改步骤)
+- [dns配置](#dns配置)
+- [ssl证书配置](#ssl证书配置)
+- [Speed加速配置](#speed加速配置)
+- [效果](#效果)
 
 ### CloudFlare
 简单地说，[CloudFlare](https://zh.wikipedia.org/wiki/CloudFlare)就是通过基于反向代理的内容分发网络（Content Delivery Network,CDN）及分布式域名解析服务（Distributed Domain Name Server），帮助受保护站点抵御包括拒绝服务攻击在内的大多数网络攻击，确保该网站长期在线，同时提升网站的性能、加载速度以改善访客体验。  
@@ -67,13 +67,13 @@ toc: true
 ### 效果
 使用curl命令查看Response Headers
 ```
-curl -I blog.lestat.me
+curl -I https://lestat220255.github.io
 HTTP/1.1 301 Moved Permanently
 Date: Wed, 17 Oct 2018 15:11:38 GMT
 Connection: keep-alive
 Cache-Control: max-age=3600
 Expires: Wed, 17 Oct 2018 16:11:38 GMT
-Location: https://blog.lestat.me/
+Location: https://lestat220255.github.io
 Server: cloudflare
 CF-RAY: 46b3b2eb020920c0-LAX
 ```
