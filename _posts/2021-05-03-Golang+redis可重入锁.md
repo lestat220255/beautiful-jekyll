@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Golang+Redis可重入锁"
-subtitle:   "自动重试,自动续期"
+subtitle:   "自动重试,自动续期,可重入"
 date:       2021-05-03 14:50:11
 author:     "Lester"
 header-img: "img/post-bg-2015.jpg"
@@ -134,7 +134,7 @@ return nil;
 
 
 
-lua脚本[参考文章](https://segmentfault.com/a/1190000022931307)
+[参考](https://segmentfault.com/a/1190000022931307)
 
 
 
