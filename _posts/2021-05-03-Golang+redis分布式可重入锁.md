@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Golang+Redis可重入锁"
+title:      "Golang+Redis分布式可重入锁"
 subtitle:   "自动重试,自动续期,可重入"
 date:       2021-05-03 14:50:11
 author:     "Lester"

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Golang+Redis分布式锁"
+title:      "Golang+Redis分布式互斥锁"
 subtitle:   "自动重试,自动续期"
 date:       2021-05-02 22:39:11
 author:     "Lester"
